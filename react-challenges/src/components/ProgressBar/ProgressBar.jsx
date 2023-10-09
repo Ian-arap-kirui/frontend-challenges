@@ -9,9 +9,10 @@
 // Do not edit the data-testid attributes
 // You can use styled-components library to achieve the desired result
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Task from "../Task/Task";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -19,43 +20,46 @@ const Wrapper = styled.div`
   border-radius: 5px;
   background-color: lightgrey;
 `;
-
 const Progress = styled.div`
+  color: "white";
   width: ${(props) => props.percent}%;
   height: 100%;
   border-radius: 5px;
   background-color: green;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
-const ProgressBar = ({ percent = 12, data }) => {
+const ProgressBar = ({ data }) => {
+  const [percent, setPercent] = useState(60);
+
+  useEffect(() => {
+    const calculateYearProgress = () => {
+      const now = new Date();
+      const startOfYear = new Date(now.getFullYear(), 0, 1);
+      const endOfYear = new Date(now.getFullYear(), 11, 31);
+      const yearProgress =
+        ((now - startOfYear) / (endOfYear - startOfYear)) * 100;
+      setPercent(Math.round(yearProgress));
+    };
+
+    calculateYearProgress();
+  }, []);
+
   const filteredData = data.filter((item) => item.title === "Progress-Bar");
+
   return (
     <>
-      {filteredData.map((item) => (
-        <div key={item.id}>
-          <p>{item.title}</p>
-          <img src={item.img} alt="content-img" />
-          <p style={{ columnCount: "2", columnGap: "20px" }}>
-            {item.description}
-          </p>
-          <div>
-            <h4>NOTE</h4>
-            <p style={{ fontStyle: "italic", color: "red" }}>{item.extras}</p>
-          </div>
-
-          <div>
-            <h3>Challenges</h3>
-            <p>
-              {item.challenges.split(", ").map((text) => (
-                <li>{text}</li>
-              ))}
-            </p>
-          </div>
-        </div>
-      ))}
+      <Task filteredData={filteredData} />
       <h2>Result:</h2>
+      Year Progress = {percent} %
       <Wrapper data-testid="wrapper">
-        <Progress percent={percent} data-testid="progress" />
+        <Progress percent={percent} data-testid="progress">
+          {" "}
+          {percent}%
+        </Progress>
       </Wrapper>
       <Link to={-1}>🔙 back</Link>
     </>

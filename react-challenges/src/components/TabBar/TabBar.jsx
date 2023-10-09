@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Task from "../Task/Task";
 
 const person = {
   name: "John Doe",
@@ -15,45 +16,49 @@ const address = {
   zip: "94107",
 };
 
-const Tabs = () => {
+const Tabs = ({ data }) => {
   const [activeTab, setActiveTab] = useState("Person");
-
+  const filteredData = data.filter((item) => item.title === "Tabs Component");
   return (
-    <Container>
-      <TabList>
-        <Tab
-          data-testid="person-tab"
-          onClick={() => setActiveTab("Person")}
-          active={activeTab === "Person"}
-        >
-          Person
-        </Tab>
-        <Tab
-          data-testid="address-tab"
-          onClick={() => setActiveTab("Address")}
-          active={activeTab === "Address"}
-        >
-          Address
-        </Tab>
-      </TabList>
-      <TabContent>
-        {activeTab === "Person" ? (
-          <PersonContainer data-testid="person-container">
-            <p>Name: {person.name}</p>
-            <p>Age: {person.age}</p>
-            <p>Occupation: {person.occupation}</p>
-          </PersonContainer>
-        ) : (
-          <AddressContainer data-testid="address-container">
-            <p>Street: {address.street}</p>
-            <p>City: {address.city}</p>
-            <p>State: {address.state}</p>
-            <p>Zip: {address.zip}</p>
-          </AddressContainer>
-        )}
-      </TabContent>
-      <Link to={-1}>🔙 back</Link>
-    </Container>
+    <div>
+      <Task filteredData={filteredData} />
+      <h2>Result:</h2>
+      <Container>
+        <TabList>
+          <Tab
+            data-testid="person-tab"
+            onClick={() => setActiveTab("Person")}
+            active={activeTab === "Person"}
+          >
+            Person
+          </Tab>
+          <Tab
+            data-testid="address-tab"
+            onClick={() => setActiveTab("Address")}
+            active={activeTab === "Address"}
+          >
+            Address
+          </Tab>
+        </TabList>
+        <TabContent>
+          {activeTab === "Person" ? (
+            <PersonContainer data-testid="person-container">
+              <p>Name: {person.name}</p>
+              <p>Age: {person.age}</p>
+              <p>Occupation: {person.occupation}</p>
+            </PersonContainer>
+          ) : (
+            <AddressContainer data-testid="address-container">
+              <p>Street: {address.street}</p>
+              <p>City: {address.city}</p>
+              <p>State: {address.state}</p>
+              <p>Zip: {address.zip}</p>
+            </AddressContainer>
+          )}
+        </TabContent>
+        <Link to={-1}>🔙 back</Link>
+      </Container>
+    </div>
   );
 };
 
