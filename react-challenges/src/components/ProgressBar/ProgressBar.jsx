@@ -11,6 +11,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -34,14 +35,29 @@ const ProgressBar = ({ percent = 12, data }) => {
         <div key={item.id}>
           <p>{item.title}</p>
           <img src={item.img} alt="content-img" />
-          <p>{item.description}</p>
-          <p>{item.extras}</p>
+          <p style={{ columnCount: "2", columnGap: "20px" }}>
+            {item.description}
+          </p>
+          <div>
+            <h4>NOTE</h4>
+            <p style={{ fontStyle: "italic", color: "red" }}>{item.extras}</p>
+          </div>
+
+          <div>
+            <h3>Challenges</h3>
+            <p>
+              {item.challenges.split(", ").map((text) => (
+                <li>{text}</li>
+              ))}
+            </p>
+          </div>
         </div>
       ))}
-      ;<h2>Result:</h2>
+      <h2>Result:</h2>
       <Wrapper data-testid="wrapper">
         <Progress percent={percent} data-testid="progress" />
       </Wrapper>
+      <Link to={-1}>🔙 back</Link>
     </>
   );
 };

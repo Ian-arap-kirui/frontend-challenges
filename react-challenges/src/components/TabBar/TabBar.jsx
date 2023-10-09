@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const person = {
   name: "John Doe",
@@ -51,6 +52,7 @@ const Tabs = () => {
           </AddressContainer>
         )}
       </TabContent>
+      <Link to={-1}>🔙 back</Link>
     </Container>
   );
 };
