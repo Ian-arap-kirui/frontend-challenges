@@ -26,12 +26,23 @@ const Progress = styled.div`
   background-color: green;
 `;
 
-const ProgressBar = ({ percent = 12 }) => {
+const ProgressBar = ({ percent = 12, data }) => {
+  const filteredData = data.filter((item) => item.title === "Progress-Bar");
   return (
-    <Wrapper data-testid="wrapper">
-      <Progress percent={percent} data-testid="progress" />
-      Progress Bar
-    </Wrapper>
+    <>
+      {filteredData.map((item) => (
+        <div key={item.id}>
+          <p>{item.title}</p>
+          <img src={item.img} alt="content-img" />
+          <p>{item.description}</p>
+          <p>{item.extras}</p>
+        </div>
+      ))}
+      ;<h2>Result:</h2>
+      <Wrapper data-testid="wrapper">
+        <Progress percent={percent} data-testid="progress" />
+      </Wrapper>
+    </>
   );
 };
 
