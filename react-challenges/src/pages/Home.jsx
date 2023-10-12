@@ -13,6 +13,9 @@ const Home = () => {
         <li>
           <Link to={"/tabs"}>Tabs</Link>
         </li>
+        <li>
+          <Link to={"/hover-counter"}>Hover Counter</Link>
+        </li>
       </ul>
     </div>
   );

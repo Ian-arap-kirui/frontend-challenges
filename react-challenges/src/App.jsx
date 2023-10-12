@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Tabs from "./components/TabBar/TabBar";
+import HoverCounter from "./components/HoverCounter/HoverCounter";
 import Home from "./pages/Home";
 import { tasks } from "./content/data";
 
@@ -18,6 +19,10 @@ function App() {
     {
       path: "/tabs",
       element: <Tabs data={tasks} />,
+    },
+    {
+      path: "/hover-counter",
+      element: <HoverCounter data={tasks} />,
     },
   ]);
   return <RouterProvider router={router} />;
