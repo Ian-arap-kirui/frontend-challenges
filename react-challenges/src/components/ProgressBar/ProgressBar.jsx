@@ -54,7 +54,7 @@ const ProgressBar = ({ data }) => {
     <>
       <Task filteredData={filteredData} />
       <h2>Result:</h2>
-      Year Progress = {percent} %
+      2023 Progress: {percent} %
       <Wrapper data-testid="wrapper">
         <Progress percent={percent} data-testid="progress">
           {" "}
