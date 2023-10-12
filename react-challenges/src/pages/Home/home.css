@@ -36,6 +36,13 @@
 .taskItem:hover {
   background-color: white;
   transition: 0.8s ease-in-out;
+  color: #141e30; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to right, #243b55, #141e30);
 }
 
 .line {
