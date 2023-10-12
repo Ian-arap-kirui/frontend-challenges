@@ -1,0 +1,26 @@
+In this lab, you will work with Regular Expressions in JavaScript to solve different text manipulation challenges.
+
+Make sure that you're familiar with the Regular Expressions before attempting this challenge. This is a prerequisite to complete the mentioned challenges
+
+Challenges
+Matching phone numbers in a given format.
+If a given String contains a phone number of 10 digits you would have to format the string in the format of xxx xxx xxxx (with the mentioned spaces)
+Replacing URLs in a text string.
+If the given string contains a valid url, return a new string by replacing the valid url with URL_REPLACED
+Counting the number of words in a text string.
+Return the count of the number of words present in the inputted string.
+Removing extra spaces between words in a text string.
+If the given string contains any extra spaces between words including traililng and leading spaces. All of them should be removed and return a proper string.
+For each challenge, you have to write the code in the desired function from the given boilerplate code.
+
+Hint: Use JavaScript's built-in string methods like match(), replace(), split(), and trim() along with Regular Expressions to complete this lab.
+
+TEST CASES
+
+Create a function called matchPhoneNumbers that takes a string as input and returns an array of phone numbers matched in the string. Phone numbers format: '--- --- ----'
+
+Create a function called replaceURLs that takes a string as input and replaces any URLs with the text 'URL_REPLACED'. Do not use any external libraries.
+
+Create a function called countWords that takes a string as input and returns the total number of words in the string.
+
+Create a function called removeExtraSpaces that takes a string as input and removes any extra spaces between the words in the string.

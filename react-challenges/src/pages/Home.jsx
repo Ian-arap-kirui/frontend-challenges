@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
-      <p>List of challenges</p>
+      <p>Challenges</p>
       <ul>
         <li>
           {" "}
@@ -12,6 +12,9 @@ const Home = () => {
         </li>
         <li>
           <Link to={"/tabs"}>Tabs</Link>
+        </li>
+        <li>
+          <Link to={"/hover-counter"}>Hover Counter</Link>
         </li>
       </ul>
     </div>
