@@ -3,7 +3,7 @@ import "./App.css";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 import Tabs from "./components/TabBar/TabBar";
 import HoverCounter from "./components/HoverCounter/HoverCounter";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import { tasks } from "./content/data";
 
 function App() {
