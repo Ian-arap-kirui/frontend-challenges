@@ -1,0 +1,49 @@
+Task
+
+Overview
+In this interactive lab, you will build a multi-column layout using CSS and manipulate it with JavaScript. You will work specifically with column-span and column-count properties. The final output will consist of six boxes, out of which the third box will span across two columns, and the column-count can be changed dynamically using a JavaScript function.
+
+Concepts
+CSS multi-column layout: Provides a way of creating layouts with columns, just like you'd see in some traditional newspapers and magazines.
+column-span property: Allows an element to span across multiple columns in a multi-column layout.
+column-count property: Specifies the number of columns an element should be divided into.
+Steps
+Start by creating an HTML structure. Your HTML should have a parent div with an id of 'container'. Inside this container div, create six child div elements each having class 'box'.
+Make use of CSS to style your HTML elements. You will need to apply a column-count of 2 to your container, which will make the child boxes display in two columns.
+To make one of the box elements span across two columns, select the third div box and apply a column-span of 'all'.
+Lastly, write a JavaScript function changeColumnCount that takes an integer as a parameter. This function should change the column-count of the 'container' div to the passed integer.
+Examples
+The following is a basic example of how you can apply column-count and column-span CSS properties:
+
+<div id="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+#container {
+    column-count: 2;
+}
+
+.box {
+    column-span: all;
+}
+In the above example, all boxes will span across two columns.
+
+Hints
+Use the getElementById method in your JavaScript function to select the 'container' div.
+You will need to manipulate CSS properties using JavaScript. This can be done accessing the style property of your selected element, like so: document.getElementById('elementId').style.cssPropertyName.
+Remember to think this lab in terms of boxes (div elements) and how you can manipulate their distribution across multiple columns, both statically with CSS and dynamically with JavaScript.
+
+
+TEST CASES
+------------------------------------------------------------
+
+Create an HTML page with a div element having an id 'container'. Inside the 'container', create 6 div elements with class 'box'.
+
+Apply a CSS rule to the '.box' class elements to make them display in columns with a column-count of 2.
+
+Select the 3rd div element with class 'box' and make it span across 2 columns.
+
+Write a JavaScript function changeColumnCount that takes an integer as an argument and sets the column-count of the div with id 'container' to that value.
+
+------------------------------------------------------------

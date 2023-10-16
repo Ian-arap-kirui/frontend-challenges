@@ -1,0 +1,14 @@
+/* write your CSS code here */
+#container {
+  column-count: 2;
+}
+
+.box {
+  background-color: lightgray;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.box:nth-child(3) {
+  column-span: all;
+}
