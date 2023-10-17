@@ -5,6 +5,7 @@ import Tabs from "./components/TabBar/TabBar";
 import HoverCounter from "./components/HoverCounter/HoverCounter";
 import Home from "./pages/Home/Home";
 import { tasks } from "./content/data";
+import ThemeToggler from "./components/themeToggler/ThemeToggler";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
     {
       path: "/hover-counter",
       element: <HoverCounter data={tasks} />,
+    },
+    {
+      path: "/theme-toggler",
+      element: <ThemeToggler data={tasks} />,
     },
   ]);
   return <RouterProvider router={router} />;
