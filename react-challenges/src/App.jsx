@@ -6,6 +6,7 @@ import HoverCounter from "./components/HoverCounter/HoverCounter";
 import Home from "./pages/Home/Home";
 import { tasks } from "./content/data";
 import ThemeToggler from "./components/themeToggler/ThemeToggler";
+import GitHubUserSearch from "./components/GitUserSearch/GitUserSearch";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
     {
       path: "/theme-toggler",
       element: <ThemeToggler data={tasks} />,
+    },
+    {
+      path: "/git-user-search",
+      element: <GitHubUserSearch data={tasks} />,
     },
   ]);
   return <RouterProvider router={router} />;
