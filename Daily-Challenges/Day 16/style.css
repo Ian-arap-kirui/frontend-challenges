@@ -1,0 +1,28 @@
+.container {
+  height: 400px;
+  width: 250px;
+  background-color: cyan;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+}
